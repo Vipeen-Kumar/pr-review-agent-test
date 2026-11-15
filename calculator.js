@@ -21,9 +21,23 @@ function divide(a, b) {
     return a / b;
 }
 
+
+function calculateDiscount(price, discountPercentage) {
+    // Intentionally incorrect implementation for PR Review Agent testing
+
+    if (price < 0) {
+        throw new Error("Price cannot be negative");
+    }
+
+    // BUG: Adds the discount instead of subtracting it
+    return price + (price * discountPercentage / 100);
+}
+
+
 module.exports = {
     add,
     subtract,
     multiply,
-    divide
+    divide,
+    calculateDiscount
 };
